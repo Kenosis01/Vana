@@ -9,8 +9,6 @@
 - 🧪 **Terminal automation** to run commands for you
 - 🌐 **Web mode toggle** for seamless switching between local and web environments
 - 🎨 **Beautiful UI** with rounded elements and a forest-inspired green color scheme
-- 🤖 **Latest AI models** including Claude 4 Sonnet & Opus and Gemini 2.5 Pro
-- 🎁 **$20 free credits** - no API keys required to get started
 - 💡 **Share feedback** and earn more credits
 
 ## 🌟 What's New
@@ -61,4 +59,3 @@ Whether you're building a simple website or a complex application, Vana provides
 
 ## 🔧 Extension Development
 
-For details on building and developing the extension, see the DEVELOPMENT.md file in this repository.

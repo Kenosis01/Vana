@@ -1,52 +1,42 @@
-.pnpm-store
-dist
-out
-out-*
-node_modules
-coverage/
-mock/
-.DS_Store
-*.orig
+# Dependency directories
+node_modules/
+.pnpm-store/
 
-# Builds
-bin/
+# Build outputs
+dist/
+out/
+build/
 *.vsix
 
-# Local prompts and rules
-/local-prompts
+# Test directories
+**/tests/
+**/__tests__/
+**/__mocks__/
 
-# Test environment
-.test_env
-.vscode-test/
-
-# Docs
-docs/_site/
-
-# Dotenv
-.env
-.env.*
-!.env.*.sample
-
-# Logging
-logs
+# Development files
+.vscode/
+.idea/
 *.log
-
-# Vite development
-.vite-port
-
-# kilocode_change
-.history/
-.aider*
-.docker-cache/
-
-# Turborepo
+*.tsbuildinfo
 .turbo
 
-# IntelliJ and Qodo plugin folders
-.idea/
-.qodo/
-.vercel
-.roo/mcp.json
+# Unnecessary directories
+kilocode/
+webview-ui/
+web-server/
 
-# Nix / Direnv
-.direnv
+# Temporary files
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+
+# Environment files
+.env
+.env.*
+!.env.example
+
+# Debug files
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*

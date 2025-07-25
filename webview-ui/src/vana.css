@@ -1,0 +1,112 @@
+/* Vana specific styles - Forest Theme */
+
+/* Forest theme colors */
+:root {
+  --vana-green-100: #e6f4ea;
+  --vana-green-200: #ceead6;
+  --vana-green-300: #a8dab5;
+  --vana-green-400: #81c995;
+  --vana-green-500: #4caf50;
+  --vana-green-600: #388e3c;
+  --vana-green-700: #2e7d32;
+  --vana-green-800: #1b5e20;
+  
+  --vana-brown-100: #efebe9;
+  --vana-brown-200: #d7ccc8;
+  --vana-brown-300: #bcaaa4;
+  --vana-brown-400: #a1887f;
+  --vana-brown-500: #795548;
+  --vana-brown-600: #5d4037;
+  
+  --vana-accent-yellow: #ffd54f;
+  --vana-accent-orange: #ff9800;
+}
+
+/* Slash command highlighting */
+.slash-command-match-textarea-highlight {
+	background-color: color-mix(in srgb, var(--vana-green-500) 30%, transparent);
+	border-radius: 3px;
+	box-shadow: 0 0 0 0.5px color-mix(in srgb, var(--vana-green-500) 30%, transparent);
+	color: transparent;
+}
+
+/* Custom slow pulse animation for task progress squares */
+@keyframes slow-pulse {
+	0%,
+	100% {
+		opacity: 1;
+	}
+	50% {
+		opacity: 0.3;
+	}
+}
+
+.animate-slow-pulse {
+	animation: slow-pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+.animate-slow-pulse-delayed {
+	animation: slow-pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+	animation-delay: 0.5s;
+}
+
+/* Fade-in animation for new task progress squares */
+@keyframes fade-in {
+	0% {
+		opacity: 0;
+		transform: scale(0.8);
+	}
+	100% {
+		opacity: 1;
+		transform: scale(1);
+	}
+}
+
+.animate-fade-in {
+	animation: fade-in 0.2s ease-out forwards;
+}
+
+/* Message highlight animation for timeline clicks */
+@keyframes message-highlight {
+	0% {
+		background-color: transparent;
+	}
+	20% {
+		background-color: color-mix(in srgb, var(--vana-green-400) 25%, transparent);
+	}
+	100% {
+		background-color: transparent;
+	}
+}
+
+.animate-message-highlight {
+	animation: message-highlight 1s ease-out forwards;
+}
+
+/* Forest theme overrides for UI elements */
+.primary-button {
+    background-color: var(--vana-green-600);
+    color: white;
+}
+
+.primary-button:hover {
+    background-color: var(--vana-green-700);
+}
+
+.secondary-button {
+    background-color: var(--vana-brown-100);
+    color: var(--vana-brown-600);
+    border: 1px solid var(--vana-brown-300);
+}
+
+.secondary-button:hover {
+    background-color: var(--vana-brown-200);
+}
+
+.accent-element {
+    color: var(--vana-accent-orange);
+}
+
+.success-message {
+    color: var(--vana-green-600);
+}

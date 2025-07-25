@@ -18,7 +18,7 @@
 @import "tailwindcss/theme.css" layer(theme);
 @import "./preflight.css" layer(base);
 @import "tailwindcss/utilities.css" layer(utilities);
-@import "./kilocode.css";
+@import "./vana.css";
 @import "katex/dist/katex.min.css";
 
 @plugin "tailwindcss-animate";
@@ -139,30 +139,51 @@
 
 @layer base {
 	:root {
+		/* Forest theme colors */
+		--vana-green-100: #e6f4ea;
+		--vana-green-200: #ceead6;
+		--vana-green-300: #a8dab5;
+		--vana-green-400: #81c995;
+		--vana-green-500: #4caf50;
+		--vana-green-600: #388e3c;
+		--vana-green-700: #2e7d32;
+		--vana-green-800: #1b5e20;
+		
+		--vana-brown-100: #efebe9;
+		--vana-brown-200: #d7ccc8;
+		--vana-brown-300: #bcaaa4;
+		--vana-brown-400: #a1887f;
+		--vana-brown-500: #795548;
+		--vana-brown-600: #5d4037;
+		
+		--vana-accent-yellow: #ffd54f;
+		--vana-accent-orange: #ff9800;
+		
+		/* Base theme variables */
 		--background: var(--vscode-editor-background);
 		--foreground: var(--vscode-editor-foreground);
 		--card: var(--vscode-editor-background);
 		--card-foreground: var(--vscode-editor-foreground);
 		--popover: var(--vscode-menu-background, var(--vscode-editor-background));
 		--popover-foreground: var(--vscode-menu-foreground, var(--vscode-editor-foreground));
-		--primary: var(--vscode-button-background);
-		--primary-foreground: var(--vscode-button-foreground);
-		--secondary: var(--vscode-button-secondaryBackground);
-		--secondary-foreground: var(--vscode-button-secondaryForeground);
+		--primary: var(--vana-green-600);
+		--primary-foreground: white;
+		--secondary: var(--vana-brown-100);
+		--secondary-foreground: var(--vana-brown-600);
 		--muted: var(--vscode-disabledForeground);
 		--muted-foreground: var(--vscode-descriptionForeground);
-		--accent: var(--vscode-list-hoverBackground);
-		--accent-foreground: var(--vscode-list-hoverForeground);
+		--accent: var(--vana-green-100);
+		--accent-foreground: var(--vana-green-800);
 		--destructive: var(--vscode-errorForeground);
 		--destructive-foreground: var(--vscode-button-foreground);
-		--border: var(--vscode-input-border, transparent); /* --border gets theme value or transparent fallback */
+		--border: var(--vana-green-300); /* Forest-themed border */
 		--input: var(--vscode-input-background);
-		--ring: var(--vscode-input-border);
-		--chart-1: var(--vscode-charts-red);
-		--chart-2: var(--vscode-charts-blue);
-		--chart-3: var(--vscode-charts-yellow);
-		--chart-4: var(--vscode-charts-orange);
-		--chart-5: var(--vscode-charts-green);
+		--ring: var(--vana-green-500);
+		--chart-1: var(--vana-green-500);
+		--chart-2: var(--vana-green-700);
+		--chart-3: var(--vana-accent-yellow);
+		--chart-4: var(--vana-accent-orange);
+		--chart-5: var(--vana-green-300);
 		--radius: 0.5rem;
 	}
 

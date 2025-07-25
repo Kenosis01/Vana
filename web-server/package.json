@@ -1,0 +1,32 @@
+{
+  "name": "vana-web-server",
+  "version": "1.0.0",
+  "description": "Web server for Vana extension",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "nodemon server.js",
+    "client": "cd client && npm start",
+    "client-install": "cd client && npm install",
+    "server-install": "npm install",
+    "install-all": "npm run server-install && npm run client-install",
+    "dev-all": "concurrently \"npm run dev\" \"npm run client\""
+  },
+  "keywords": [
+    "vana",
+    "extension",
+    "web",
+    "server"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "socket.io": "^4.7.2"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2",
+    "nodemon": "^3.0.1"
+  }
+}

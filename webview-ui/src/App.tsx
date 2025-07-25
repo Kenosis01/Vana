@@ -4,7 +4,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query"
 
 import { ExtensionMessage } from "@roo/ExtensionMessage"
 import TranslationProvider from "./i18n/TranslationContext"
-// import { MarketplaceViewStateManager } from "./components/marketplace/MarketplaceViewStateManager" // kilocode_change: rendered in settings
+// import { MarketplaceViewStateManager } from "./components/marketplace/MarketplaceViewStateManager" // vana_change: rendered in settings
 
 import { vscode } from "./utils/vscode"
 import { telemetryClient } from "./utils/TelemetryClient"
@@ -13,22 +13,22 @@ import { ExtensionStateContextProvider, useExtensionState } from "./context/Exte
 import ChatView, { ChatViewRef } from "./components/chat/ChatView"
 import HistoryView from "./components/history/HistoryView"
 import SettingsView, { SettingsViewRef } from "./components/settings/SettingsView"
-import WelcomeView from "./components/kilocode/Welcome/WelcomeView" // kilocode_change
-import ProfileView from "./components/kilocode/profile/ProfileView" // kilocode_change
+import WelcomeView from "./components/vana/Welcome/WelcomeView" // vana_change
+import ProfileView from "./components/vana/profile/ProfileView" // vana_change
 import McpView from "./components/mcp/McpView"
-// import { MarketplaceView } from "./components/marketplace/MarketplaceView" // kilocode_change: rendered in settings
+// import { MarketplaceView } from "./components/marketplace/MarketplaceView" // vana_change: rendered in settings
 import ModesView from "./components/modes/ModesView"
 import { HumanRelayDialog } from "./components/human-relay/HumanRelayDialog"
-import BottomControls from "./components/kilocode/BottomControls" // kilocode_change
-// import { AccountView } from "./components/account/AccountView" // kilocode_change: we have our own profile view
+import BottomControls from "./components/vana/BottomControls" // vana_change
+// import { AccountView } from "./components/account/AccountView" // vana_change: we have our own profile view
 import { DeleteMessageDialog, EditMessageDialog } from "./components/chat/MessageModificationConfirmationDialog"
 import { useAddNonInteractiveClickListener } from "./components/ui/hooks/useNonInteractiveClick"
-import { KiloCodeErrorBoundary } from "./kilocode/KiloCodeErrorBoundary"
+import { VanaErrorBoundary } from "./vana/VanaErrorBoundary"
 import { TooltipProvider } from "./components/ui/tooltip"
 import { STANDARD_TOOLTIP_DELAY } from "./components/ui/standard-tooltip"
-import { useKiloIdentity } from "./utils/kilocode/useKiloIdentity"
+import { useKiloIdentity } from "./utils/vana/useKiloIdentity"
 
-type Tab = "settings" | "history" | "mcp" | "modes" | "chat" | "marketplace" | "account" | "profile" // kilocode_change: add "profile"
+type Tab = "settings" | "history" | "mcp" | "modes" | "chat" | "marketplace" | "account" | "profile" // vana_change: add "profile"
 
 interface HumanRelayDialogState {
 	isOpen: boolean
@@ -72,15 +72,15 @@ const App = () => {
 		telemetrySetting,
 		telemetryKey,
 		machineId,
-		// cloudUserInfo, // kilocode_change not used
-		// cloudIsAuthenticated, // kilocode_change not used
+		// cloudUserInfo, // vana_change not used
+		// cloudIsAuthenticated, // vana_change not used
 		renderContext,
 		mdmCompliant,
-		apiConfiguration, // kilocode_change
+		apiConfiguration, // vana_change
 	} = useExtensionState()
 
 	// Create a persistent state manager
-	// const marketplaceStateManager = useMemo(() => new MarketplaceViewStateManager(), []) // kilocode_change: rendered in settings
+	// const marketplaceStateManager = useMemo(() => new MarketplaceViewStateManager(), []) // vana_change: rendered in settings
 
 	const [showAnnouncement, setShowAnnouncement] = useState(false)
 	const [tab, setTab] = useState<Tab>("chat")
@@ -104,7 +104,7 @@ const App = () => {
 	})
 
 	const settingsRef = useRef<SettingsViewRef>(null)
-	const chatViewRef = useRef<ChatViewRef & { focusInput: () => void }>(null) // kilocode_change
+	const chatViewRef = useRef<ChatViewRef & { focusInput: () => void }>(null) // vana_change
 
 	const switchTab = useCallback(
 		(newTab: Tab) => {
@@ -133,7 +133,7 @@ const App = () => {
 			const message: ExtensionMessage = e.data
 
 			if (message.type === "action" && message.action) {
-				// kilocode_change begin
+				// vana_change begin
 				if (message.action === "focusChatInput") {
 					if (tab !== "chat") {
 						switchTab("chat")
@@ -141,7 +141,7 @@ const App = () => {
 					chatViewRef.current?.focusInput()
 					return
 				}
-				// kilocode_change end
+				// vana_change end
 
 				// Handle switchTab action with tab parameter
 				if (message.action === "switchTab" && message.tab) {
@@ -185,7 +185,7 @@ const App = () => {
 				chatViewRef.current?.acceptInput()
 			}
 		},
-		// kilocode_change: add tab
+		// vana_change: add tab
 		[tab, switchTab],
 	)
 
@@ -198,14 +198,14 @@ const App = () => {
 		}
 	}, [shouldShowAnnouncement])
 
-	// kilocode_change start
-	const telemetryDistinctId = useKiloIdentity(apiConfiguration?.kilocodeToken ?? "", machineId ?? "")
+	// vana_change start
+	const telemetryDistinctId = useKiloIdentity(apiConfiguration?.vanaToken ?? "", machineId ?? "")
 	useEffect(() => {
 		if (didHydrateState) {
 			telemetryClient.updateTelemetryState(telemetrySetting, telemetryKey, telemetryDistinctId)
 		}
 	}, [telemetrySetting, telemetryKey, telemetryDistinctId, didHydrateState])
-	// kilocode_change end
+	// vana_change end
 
 	// Tell the extension that we are ready to receive messages.
 	useEffect(() => vscode.postMessage({ type: "webviewDidLaunch" }), [])
@@ -240,15 +240,15 @@ const App = () => {
 			{tab === "mcp" && <McpView onDone={() => switchTab("chat")} />}
 			{tab === "history" && <HistoryView onDone={() => switchTab("chat")} />}
 			{tab === "settings" && (
-				<SettingsView ref={settingsRef} onDone={() => switchTab("chat")} targetSection={currentSection} /> // kilocode_change
+				<SettingsView ref={settingsRef} onDone={() => switchTab("chat")} targetSection={currentSection} /> // vana_change
 			)}
-			{/* kilocode_change: add profileview */}
+			{/* vana_change: add profileview */}
 			{tab === "profile" && <ProfileView onDone={() => switchTab("chat")} />}
-			{/* kilocode_change: rendered in settings */}
+			{/* vana_change: rendered in settings */}
 			{/* {tab === "marketplace" && (
 				<MarketplaceView stateManager={marketplaceStateManager} onDone={() => switchTab("chat")} />
 			)} */}
-			{/* kilocode_change: we have our own profile view */}
+			{/* vana_change: we have our own profile view */}
 			{/* {tab === "account" && (
 				<AccountView userInfo={cloudUserInfo} isAuthenticated={false} onDone={() => switchTab("chat")} />
 			)} */}
@@ -290,7 +290,7 @@ const App = () => {
 					setEditMessageDialogState((prev) => ({ ...prev, isOpen: false }))
 				}}
 			/>
-			{/* kilocode_change */}
+			{/* vana_change */}
 			{/* Chat, modes and history view contain their own bottom controls */}
 			{!["chat", "modes", "history"].includes(tab) && (
 				<div className="fixed inset-0 top-auto">
@@ -315,10 +315,10 @@ const AppWithProviders = () => (
 	</ExtensionStateContextProvider>
 )
 
-const AppWithKiloCodeErrorBoundary = () => (
-	<KiloCodeErrorBoundary>
+const AppWithVanaErrorBoundary = () => (
+	<VanaErrorBoundary>
 		<AppWithProviders />
-	</KiloCodeErrorBoundary>
+	</VanaErrorBoundary>
 )
 
-export default AppWithKiloCodeErrorBoundary // kilocode_change
+export default AppWithVanaErrorBoundary // vana_change

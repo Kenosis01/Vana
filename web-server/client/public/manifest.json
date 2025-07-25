@@ -1,0 +1,25 @@
+{
+  "short_name": "Vana",
+  "name": "Vana - Let Your Project Grow",
+  "icons": [
+    {
+      "src": "file.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    },
+    {
+      "src": "logo192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "logo512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#1A2B20",
+  "background_color": "#1A2B20"
+}

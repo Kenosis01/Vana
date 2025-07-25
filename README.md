@@ -1,61 +1,64 @@
-<p align="center">
-  <a href="https://marketplace.visualstudio.com/items?itemName=vana.vana"><img src="https://img.shields.io/visual-studio-marketplace/v/vana.vana.svg?label=VS%20Code%20Marketplace" alt="VS Code Marketplace"></a>
-  <!--<a href="https://marketplace.visualstudio.com/items?itemName=vana.vana"><img src="https://img.shields.io/badge/Get%20$20%20of%20free%20tokens-green?logo=claude&logoColor=white" alt="Get $20 of tokens for free"></a>-->
-  <a href="https://x.com/vana_ai"><img src="https://img.shields.io/twitter/follow/vana_ai?style=flat&logo=x&color=555" alt="X (Twitter)"></a>
-  <a href="https://blog.vana.ai"><img src="https://img.shields.io/badge/Blog-555?style=flat&logo=substack&logoColor=white" alt="Substack Blog"></a>
-  <a href="https://vana.ai/discord"><img src="https://img.shields.io/discord/1349288496988160052?style=flat&logo=discord&logoColor=white" alt="Discord"></a>
-  <a href="https://www.reddit.com/r/vana/"><img src="https://img.shields.io/reddit/subreddit-subscribers/vana?style=flat&logo=reddit&logoColor=white" alt="Reddit"></a>
-</p>
+# 🌱 Vana - Your AI Coding Companion
 
-# 🚀 Vana
+**Let Your Project Grow.** Vana is a powerful open-source VS Code AI agent with a beautiful forest-inspired interface. It combines the best features from Roo Code and Cline to create the ultimate coding assistant.
 
-> **Let Your Project Grow.** Open-source VS Code AI agent with a forest-inspired approach to coding. Merged features from [Roo Code](https://github.com/RooVetGit/Roo-Code) and [Cline](https://github.com/cline/cline).
+## ✨ Features at a Glance
 
-- ✨ Generate code from natural language
-- ✅ Checks its own work
-- 🧪 Run terminal commands
-- 🌐 Automate the browser
-- 🤖 Latest AI models
-- 🎁 API keys optional
-- 💡 **$20 free credits for Gemini 2.5 Pro, Claude 4 Sonnet & Opus, and GPT-4.1**<br/>Share feedback and earn more credits!
+- 🚀 **Generate code** from natural language descriptions
+- 🔍 **Self-checking AI** that verifies its own work
+- 🧪 **Terminal automation** to run commands for you
+- 🌐 **Web mode toggle** for seamless switching between local and web environments
+- 🎨 **Beautiful UI** with rounded elements and a forest-inspired green color scheme
+- 🤖 **Latest AI models** including Claude 4 Sonnet & Opus and Gemini 2.5 Pro
+- 🎁 **$20 free credits** - no API keys required to get started
+- 💡 **Share feedback** and earn more credits
 
-<p align="center">
-  <img src="https://raw.githubusercontent.com/Vana-Org/vana/refs/heads/main/kilo.gif" width="100%" />
-</p>
+## 🌟 What's New
 
-- [VS Code Marketplace](https://vana.ai/vscode-marketplace?utm_source=Readme) (download)
-- [Official Vana.ai Home page](https://vana.ai) (learn more)
+- **Web Mode Toggle**: Easily switch between local and web environments with our new toggle button
+- **Enhanced UI**: Enjoy a more polished interface with rounded boxes and beautiful green buttons
+- **Custom Icon**: A sleek new file icon that represents the essence of Vana
 
-## Key Features
+## 🛠️ Key Features
 
-- **Code Generation:** Generate code using natural language.
-- **Task Automation:** Automate repetitive coding tasks.
-- **Automated Refactoring:** Refactor and improve existing code.
-- **MCP Server Marketplace**: Easily find, and use MCP servers to extend the agent capabilities.
-- **Multi Mode**: Plan with Architect, Code with Coder, and Debug with Debugger, and make your own custom modes.
-- **Visual UI Composer**: For frontend code (HTML/CSS/JS/React/Vue/Svelte), auto-generates a visual preview window inside VS Code where users can click on UI elements to inspect/modify and issue UI prompts like "make this button rounded" or "move login to the left."
-- **UI Pattern Matcher**: Suggests layout inspirations (e.g., from Dribbble, Tailwind UI) when generating or refactoring components.
+### Code Generation and Assistance
+- Generate complete code solutions from natural language descriptions
+- Get explanations for complex code snippets
+- Receive suggestions for code improvements and optimizations
 
-## How to get started with Vana
+### Development Workflow
+- Automate repetitive coding tasks
+- Run terminal commands directly from the chat interface
+- Debug issues with intelligent error analysis
 
-1.  Install the Vana extension from the [VS Code Marketplace](https://marketplace.visualstudio.com/items?itemName=vana.vana).
-2.  Log in with your Google Account to get $20 in free Claude 4 Sonnet & Opus credits.
-3.  Start using the extension. Here's a video to help you get started (just click on the image below and you'll be redirected to YouTube):
+### UI and Design
+- Rounded interface elements for a modern look
+- Forest-inspired green color scheme
+- Responsive and intuitive design
 
-[![Watch the video](https://img.youtube.com/vi/pqGfYXgrhig/maxresdefault.jpg)](https://youtu.be/pqGfYXgrhig)
+### Multiple Modes
+- **Architect Mode**: Plan your project structure and design
+- **Code Mode**: Write and refactor code efficiently
+- **Debug Mode**: Find and fix issues in your code
+- **Custom Modes**: Create your own specialized modes
 
-## Difference between Roo Code and Cline
+### AI Integration
+- Access to the latest AI models
+- No API keys required to get started
+- $20 in free credits for new users
 
-We're doing our best to combine the best of both worlds. Vana combines all features of Cline, Roo, and adds a few of our own additions. It has the best features of both, and we're working on making it even better!
+## 🚀 Getting Started
 
-No need to fiddle with API keys, Vana ships with the latest AI models plugged in, including Claude 4 Sonnet and Opus and Gemini 2.5 Pro.
+1. Install the Vana extension from the VS Code Marketplace
+2. Log in to access your free credits
+3. Start using Vana to enhance your coding experience
 
-Vana is a direct fork from Roo Code, but also includes the following features from Cline (and more):
+## 🌲 Why Vana?
 
-- MCP Server Marketplace: Easily find, and use MCP servers to extend the agent capabilities.
-- System notifications: Get notified when the agent is done with a task.
-- Easy model connection: with bigger free tier.
+Vana takes a forest-inspired approach to coding, helping your projects grow naturally and sustainably. With its powerful AI capabilities, beautiful interface, and thoughtful features, Vana is the perfect companion for developers of all skill levels.
 
-## Extension Development
+Whether you're building a simple website or a complex application, Vana provides the tools and assistance you need to bring your ideas to life.
 
-For details on building and developing the extension, see [DEVELOPMENT.md](/DEVELOPMENT.md)
+## 🔧 Extension Development
+
+For details on building and developing the extension, see the DEVELOPMENT.md file in this repository.
